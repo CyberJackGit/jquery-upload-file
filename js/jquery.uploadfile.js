@@ -12,7 +12,7 @@
     var feature = {};
     feature.fileapi = $("<input type='file'/>").get(0).files !== undefined;
     feature.formdata = window.FormData !== undefined;
-    $.fn.uploadFile = function (options) {
+    $.fn.uploadFileCyberjack = function (options) {
         // This is the easiest way to have default options.
         var s = $.extend({
             // These are the defaults.
