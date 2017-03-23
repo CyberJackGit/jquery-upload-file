@@ -753,7 +753,7 @@
                     pd.cancel.show()
                     form.remove();
                     pd.cancel.click(function () {
-                    	 mainQ.splice(mainQ.indexOf(form), 1);
+                        mainQ.splice(mainQ.indexOf(form), 1);
                         removeExistingFileName(obj, fileArray);
                         pd.statusbar.remove();
                         s.onCancel.call(obj, fileArray, pd);
@@ -763,7 +763,9 @@
                     return false;
                 },
                 beforeSend: function (xhr, o) {
-
+                    if(csrfToken) {
+                        xhr.setRequestHeader("X-CSRFToken", csrfToken);
+                    }
                     pd.progressDiv.show();
                     pd.cancel.hide();
                     pd.done.hide();
